@@ -1,0 +1,18 @@
+{
+  "name": "exchange-app",
+  "version": "0.1.1",
+  "main": "application.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexander-shvets/exchange-app.git"
+  },
+  "author": "Alexander Shvets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexander-shvets/exchange-app/issues"
+  },
+  "homepage": "https://github.com/alexander-shvets/exchange-app#readme"
+}
