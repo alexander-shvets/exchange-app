@@ -2,16 +2,11 @@
 
 const initialState = {input: '', result: ''}
 
-function exchangeApp( state /* = initialState */, action ){
+function exchangeApp( state = initialState, action ){
     switch( action.type ){
         case "EXCHANGE":
-            var
-            result = castUserInput( action.input )
-            result = exchange( result )
-            result = formatExchangeResult( result )
-            return {
-                input:  action.input,
-                result: result
-            }
+            const input = castUserInput( action.input )
+            var  result = exchange( input )
+            return {input, result: formatExchangeResult( result )}
     }
 }

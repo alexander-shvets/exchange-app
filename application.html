@@ -21,23 +21,23 @@
     </template>
     <div id="exchange-placeholder"></div>
     <script>
-        var store
         (function(){
-            store = createStore( exchangeApp, initialState )
-            store.subscribe( renderApp )
-            function renderApp(){
+            var store = createStore( exchangeApp, initialState )
+            renderApplication()
+            store.subscribe( renderApplication )
+            function renderApplication(){
                 var templateEl    = document.getElementById('exchange-template')
                 var placeholderEl = document.getElementById('exchange-placeholder')
-                var templateCode  = templateEl.innerHTML
 
-                placeholderEl.innerHTML = renderTemplate( store.getState(), templateCode )
+                placeholderEl.innerHTML =
+                    renderTemplate( store.getState(), templateEl.innerHTML )
+
                 var forms = placeholderEl.getElementsByTagName('FORM')
                 for(form of forms) form.onsubmit = function(){
                     store.dispatch({type:'EXCHANGE', input: form.input.value})
                     return false
                 }
             }
-            renderApp()
         })()
     </script>
 </body>
