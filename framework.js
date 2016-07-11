@@ -1,4 +1,4 @@
-function createStore( appReducer, initialState ){
+export function createStore( appReducer, initialState ){
     var state = initialState
     var listeners = []
     return {
@@ -19,7 +19,7 @@ function createStore( appReducer, initialState ){
     }
 }
 
-function renderTemplate( data, template ){
+export function renderTemplate( data, template ){
     return Object.keys( data ).reduce( replaceVariable, template)
     function replaceVariable( html, varName ){
         return html.replace('{'+varName+'}', data[varName])

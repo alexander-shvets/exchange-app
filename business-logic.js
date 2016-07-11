@@ -1,8 +1,8 @@
 // business logic
 
-const nominals = [200, 100, 50, 20, 2, 1]
+export const nominals = [200, 100, 50, 20, 2, 1]
 
-function exchange( coins ){
+export function exchange( coins ){
     var value = coins
     return nominals.map(function( nominalValue ){
         const count = parseInt( value / nominalValue)
@@ -13,11 +13,11 @@ function exchange( coins ){
 
 // validators
 
-function castUserInput( string ){
+export function castUserInput( string ){
     return parseFloat(string, 10)
 }
 
-function formatExchangeResult( exchangeResult ){
+export function formatExchangeResult( exchangeResult ){
     return nominals.map(function( nominalValue, i ){
         return exchangeResult[i] && (
             exchangeResult[i] + 'x'
