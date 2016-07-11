@@ -29,6 +29,6 @@ function formatExchangeResult( exchangeResult ){
 }
 
 function formatCurrency( pounds ){
-    if( pounds >= 1) return '£' + pounds
+    if( pounds >= 1) return '&pound;' + pounds
     else             return pounds * 100 + 'p'
 }

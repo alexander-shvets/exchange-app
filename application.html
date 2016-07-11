@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exchange Coins</title>
+
+    <script src="business-logic.js"></script>
+    <script src="state-reducers.js"></script>
+    <script src="framework.js"></script>
+    <style>
+        template {display:none}
+    </style>
+</head>
+<body>
+    <template id="exchange-template">
+        <form>
+            <input name="type" value="EXCHANGE" type="hidden"/>
+            <label>Please input pounds:
+                <input name="input" value="{input}"/></label>
+            <div id="result">{result}</div>
+        </form>
+    </template>
+    <div id="exchange-placeholder"></div>
+    <script>
+        var store
+        (function(){
+            store = createStore( exchangeApp, initialState )
+            store.subscribe( renderApp )
+            function renderApp(){
+                var templateEl    = document.getElementById('exchange-template')
+                var placeholderEl = document.getElementById('exchange-placeholder')
+                var templateCode  = templateEl.innerHTML
+
+                placeholderEl.innerHTML = renderTemplate( store.getState(), templateCode )
+                var forms = placeholderEl.getElementsByTagName('FORM')
+                for(form of forms) form.onsubmit = function(){
+                    store.dispatch({type:'EXCHANGE', input: form.input.value})
+                    return false
+                }
+            }
+            renderApp()
+        })()
+    </script>
+</body>
+</html>
