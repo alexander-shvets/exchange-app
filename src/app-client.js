@@ -1,12 +1,12 @@
 import {exchangeApp, initialState}   from './state-reducers'
 import {createStore, renderTemplate} from './framework'
 
-export const store = createStore( exchangeApp, initialState )
+const store = createStore( exchangeApp, initialState )
 
 renderApplication()
 store.subscribe( renderApplication )
 
-export function renderApplication(){
+function renderApplication(){
     var templateEl    = document.getElementById('exchange-template')
     var placeholderEl = document.getElementById('exchange-placeholder')
 

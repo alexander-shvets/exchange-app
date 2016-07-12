@@ -1,11 +1,12 @@
-// var path = require('path')
-// var webpack = require('webpack')
-
 module.exports = {
-    entry: './application.js',
+    entry: {
+        //index:  './src/app-template.html',
+        client: './src/app-client.js',
+        server: './src/app-server.js'
+    },
     output: {
-        path: __dirname,
-        filename: 'dist/bundle.js'
+        path: __dirname + '/dist',
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [

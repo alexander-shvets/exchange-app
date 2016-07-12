@@ -1,8 +1,9 @@
 {
   "name": "exchange-app",
-  "version": "0.2.0",
-  "main": "application.html",
+  "version": "0.3.0",
   "scripts": {
+    "start": "node ./dist/server.bundle.js",
+    "build": "NODE_ENV=production webpack --progress --colors; cp ./src/app-template.html ./dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
