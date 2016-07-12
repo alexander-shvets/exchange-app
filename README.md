@@ -1,5 +1,5 @@
 # exchange-app
-The simple isomorphic Flux (Redux) pattern implementation example.    
+The simple (no dependencies) isomorphic Flux (Redux) pattern implementation example.    
 To download and build dist, please run:   
 
     git clone git@github.com:alexander-shvets/exchange-app.git
