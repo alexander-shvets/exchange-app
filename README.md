@@ -1,5 +1,10 @@
 # exchange-app
-The simple isomorphic Flux (Redux) pattern implementation example.
+The simple isomorphic Flux (Redux) pattern implementation example.    
+To download and build dist run:   
+
+    git clone git@github.com:alexander-shvets/exchange-app.git
+    cd exchange-app
+    npm install
 
 #### Requirements
 Write a simple PHP application that given a number of pennies will calculate the minimum number of Sterling coins needed to make that amount.   
